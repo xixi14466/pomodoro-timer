@@ -1,0 +1,25 @@
+{
+  "name": "pomodoro-timer",
+  "version": "1.0.0",
+  "description": "A simple and elegant Pomodoro timer",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --mac"
+  },
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^26.8.1"
+  },
+  "build": {
+    "electronDist": "/Users/yintianxue/Desktop/AI知识库/first-cc/node_modules/electron/dist",
+    "electronDownload": {
+      "mirror": "https://npmmirror.com/mirrors/electron/"
+    },
+    "files": [
+      "*.js",
+      "*.html",
+      "*.css"
+    ]
+  }
+}

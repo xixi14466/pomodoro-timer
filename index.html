@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>番茄钟</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="window-frame">
+    <!-- 标题栏 -->
+    <div class="titlebar">
+      <div class="titlebar-drag">
+        <span class="titlebar-title">番茄钟</span>
+      </div>
+      <button class="titlebar-btn" id="minimize-btn" title="最小化">─</button>
+      <button class="titlebar-btn titlebar-close" id="close-btn" title="关闭">✕</button>
+    </div>
+
+    <!-- 计时器主体 -->
+    <div class="timer-section">
+      <!-- 模式切换 -->
+      <div class="mode-tabs">
+        <button class="mode-tab active" data-mode="focus">专注</button>
+        <button class="mode-tab" data-mode="shortBreak">短休</button>
+        <button class="mode-tab" data-mode="longBreak">长休</button>
+      </div>
+
+      <!-- 计时器圆环 -->
+      <div class="timer-container">
+        <div class="timer-glow"></div>
+        <svg class="progress-ring" viewBox="0 0 200 200">
+          <circle class="progress-ring-bg" cx="100" cy="100" r="85" />
+          <circle class="progress-ring-fill" cx="100" cy="100" r="85" id="progress-circle" />
+        </svg>
+        <div class="timer-display">
+          <span class="timer-minutes" id="minutes">25</span>
+          <span class="timer-colon">:</span>
+          <span class="timer-seconds" id="seconds">00</span>
+        </div>
+      </div>
+
+      <!-- 控制按钮 -->
+      <div class="controls">
+        <button class="control-btn reset-btn" id="reset-btn" title="重置">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.65 6.35A7.958 7.958 0 0012 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0112 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+        </button>
+        <button class="control-btn play-btn" id="start-btn">
+          <svg class="icon-play" viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <svg class="icon-pause" viewBox="0 0 24 24" width="28" height="28" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- 底部状态 -->
+    <div class="status-bar">
+      <div class="status-dot"></div>
+      <span class="phase-label" id="phase-label">专注时间</span>
+    </div>
+  </div>
+
+  <!-- 音效 -->
+  <audio id="alarm-sound" preload="auto"></audio>
+
+  <script src="timer.js"></script>
+</body>
+</html>

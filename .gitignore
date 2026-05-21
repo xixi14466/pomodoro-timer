@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+out/
+
+# macOS
+.DS_Store
+*.icloud
+
+# Claude
+.claude/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+Thumbs.db*.jpg
+*.png
+*.txt
+*.command
+*.app
+dist/
+node_modules/
