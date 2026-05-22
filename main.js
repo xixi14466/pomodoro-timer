@@ -6,10 +6,15 @@ let mainWindow;
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 380,
-    height: 520,
-    resizable: false,
+    height: 560,
+    minWidth: 360,
+    minHeight: 520,
+    maxWidth: 480,
+    maxHeight: 800,
+    resizable: true,
     frame: false,
-    transparent: true,
+    transparent: false,
+    backgroundColor: '#faf6f1',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
